@@ -8,7 +8,7 @@ def index(request):
     context = {
         'emp' : emp
     }
-    return render(request, 'index.html', context)
+    return render(request, 'crud/index.html', context)
 
 def add(request):
     if request.method == 'POST':
@@ -26,7 +26,7 @@ def add(request):
         new_emp.save()
 
         return redirect('index')
-    return render(request, 'index.html')
+    return render(request, 'crud/index.html')
 
 def read(request):
     if request.method == "POST":
@@ -35,7 +35,7 @@ def read(request):
             'emp' : emp
         }
         return redirect('index')
-    return render(request,'index.html',context)
+    return render(request,'crud/index.html',context)
 
 def update(request, id):
     if request.method == 'POST':
@@ -54,7 +54,7 @@ def update(request, id):
         new_emp.save()
 
         return redirect("index")
-    return render(request, 'index.html')
+    return render(request, 'crud/index.html')
 
 
 def delete(request,id):
